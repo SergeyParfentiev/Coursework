@@ -1,6 +1,6 @@
 package database.inmemory.repository;
 
-import inmemory.data.Entity;
+import database.inmemory.data.Entity;
 
 import java.util.Collection;
 import java.util.Optional;

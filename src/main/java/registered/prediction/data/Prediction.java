@@ -1,7 +1,7 @@
 package registered.prediction.data;
 
 import registered.date.data.PredictionDate;
-import inmemory.data.Entity;
+import database.inmemory.data.Entity;
 import registered.location.data.PredictionLocation;
 
 public class Prediction implements Entity {

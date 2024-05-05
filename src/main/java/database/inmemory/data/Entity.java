@@ -1,4 +1,4 @@
-package inmemory.data;
+package database.inmemory.data;
 
 public interface Entity {
 

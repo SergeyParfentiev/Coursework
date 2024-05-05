@@ -94,13 +94,13 @@ public class PredictionAddController extends AbstractController {
 
     private void createOrUpdatePrediction(HttpServletRequest request, String predictionText, LocalDate localDate,
                                           PredictionLocation predictionLocation, long predictionId) {
-        predictionDateService.findByDate(localDate).ifPresentOrElse(existedPredictionDate -> {
+        predictionDateService.findByDate(localDate).ifPresentOrElse(existingPredictionDate -> {
             if (predictionId > 0) {
-                updatePrediction(request, predictionId, predictionText, existedPredictionDate, predictionLocation);
+                updatePrediction(request, predictionId, predictionText, existingPredictionDate, predictionLocation);
             } else if (predictionId == 0) {
-                predictionService.findByDateIdAndLocationId(existedPredictionDate.getId(), predictionLocation.getId())
+                predictionService.findByDateIdAndLocationId(existingPredictionDate.getId(), predictionLocation.getId())
                         .ifPresentOrElse(prediction -> request.setAttribute("predictionId", prediction.getId()),
-                                () -> createPrediction(request, predictionText, existedPredictionDate, predictionLocation));
+                                () -> createPrediction(request, predictionText, existingPredictionDate, predictionLocation));
             } else {
                 request.setAttribute("predictionIdException", "Prediction by id '" + predictionId + "' is absent.");
             }

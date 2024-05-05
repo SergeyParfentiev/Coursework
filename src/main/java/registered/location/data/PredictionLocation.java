@@ -1,6 +1,6 @@
 package registered.location.data;
 
-import inmemory.data.Entity;
+import database.inmemory.data.Entity;
 
 public class PredictionLocation implements Entity {
 

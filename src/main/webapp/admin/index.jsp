@@ -72,7 +72,7 @@
     </div>
 
     <%if (predictionId > 0) {%>
-    <div>Do you want update existed prediction?</div>
+    <div>Do you want to update the existing prediction?</div>
     <label>
         <input style="display: none" name="predictionId" value="${predictionId}">
     </label>
